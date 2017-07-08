@@ -3,9 +3,9 @@ apiman is a WEB API Online Testing Tool
 
 # dependent
 ```
-pip install flask <br/>
-pip pymongo  <br/>
-pip flask-mongo <br/>
+pip install flask 
+pip pymongo  
+pip flask-mongo 
 ```
 
 
