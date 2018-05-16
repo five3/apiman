@@ -11,6 +11,9 @@ from util.DataPool import DataPool
 from plugs import executor, validator, hooker
 from util.Constant import HOOK_POST_ALL, HOOK_POST_REQUEST, HOOK_POST_TESTING, HOOK_PRE_ALL, HOOK_PRE_REQUEST, HOOK_PRE_TESTING
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 class utils(object):
     def __init__(self):
@@ -56,7 +59,7 @@ def parse_args():
         elif op == '-e': #encoding
             encoding = value
         elif op == '-E': #expect result
-            expect = value
+            expect = value.decode('gbk')
         elif op == '-C': #config
             config_file = value
         elif op == '-D': #DB connector
@@ -287,7 +290,7 @@ def main(args):
     summary = {'count': COUNT, 'pass': PASS, 'fail': FAIL, 'skip': SKIP}
     DP.add_summary(args['task_name'], summary)
 
-    print 'time elapse: %d' % (time.time() - start_time)
+    print u'时间消耗: %d' % (time.time() - start_time)
     return summary
 
 
@@ -297,4 +300,4 @@ CONTEXT['utils'].get_test_data_by_case_name = get_test_data_by_case_name
 
 if __name__ == '__main__':
     args = parse_args()
-    print 'summary: %s' % main(args)
+    print u'统计信息: %s' % main(args)
