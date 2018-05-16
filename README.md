@@ -8,6 +8,10 @@ pip pymongo
 pip flask-mongo 
 ```
 
-
+# quick start
+```
+cd bin
+python run_case.py -u http://www.baidu.com -m get -E 百度
+```
 
 
